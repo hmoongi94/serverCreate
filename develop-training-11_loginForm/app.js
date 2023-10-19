@@ -1,7 +1,8 @@
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
-const loginSuccess = require('./static/module/successLetter');
+let parsedBody1
+let parsedBody2
 // const loginSuccess = require('./static/module/loginSuccess');
 
 
@@ -62,16 +63,16 @@ const server = http.createServer((req, res) => {
       // console.log(body)
     })
     req.on('end', () => {
-      const parsedBody = querystring.parse(body);
+      parsedBody1 = querystring.parse(body);
       const loginSuccesshtml = require("./static/module/loginSuccess.js")
-      console.log(parsedBody)
+      console.log(parsedBody1)
       // loginSuccess = require("./loginSuccess.js")
-      console.log(parsedBody.username)
+      console.log(parsedBody1.username)
       // console.log(loginSuccess)
-      const { username, password1, password2, email } = parsedBody;
-      if (password1 === password2) {
+      const { username, password1, password2, email } = parsedBody1;
+      if (password1 === password2 && username !== "" && email !== "") {
         res.writeHead(200, { "Content-Type": "text/html" })
-        res.end(loginSuccesshtml(parsedBody.username))
+        res.end(loginSuccesshtml(parsedBody1.username))
       } else {
         res.end("login Fail!")
       }
@@ -89,15 +90,15 @@ const server = http.createServer((req, res) => {
       // console.log(body)
     })
     req.on('end', () => {
-      const parsedBody = querystring.parse(body);
-      console.log(parsedBody)
+      parsedBody2 = querystring.parse(body);
+      console.log(parsedBody2)
       const successLetter = require("./static/module/successLetter.js")
       // loginSuccess = require("./loginSuccess.js")
       // console.log(loginSuccess)
-      const { title, text } = parsedBody;
-      if (title === text) {
+      const { title, text } = parsedBody2;
+      if (title !== "" && text !=="") {
         res.writeHead(200, { "Content-Type": "text/html" })
-        res.end(successLetter(parsedBody.title))
+        res.end(successLetter(parsedBody1.username,parsedBody2.title))
       } else {
         res.end("fail send letter")
       }

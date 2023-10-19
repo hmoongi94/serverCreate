@@ -1,4 +1,4 @@
-const successLetterhtml = function(title){
+const successLetterhtml = function(username,title){
   
   return `<!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@ const successLetterhtml = function(title){
   <link rel="stylesheet" href="./loginForm.css">
 </head>
 <body>
-  <h1>${title}편지를 보냈습니다!</h1>
+  <h1>${username}님은 ${title}편지를 보냈습니다!</h1>
 </body>
 </html>`
 

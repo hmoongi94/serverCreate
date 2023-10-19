@@ -10,7 +10,7 @@ const loginSuccesshtml = function(username){
   <link rel="stylesheet" href="./loginForm.css">
 </head>
 <body>
-  <h1>${username}편지를 보냈습니다!</h1>
+  <h1>${username}님! 접속을 축하드립니다! 저에게 편지를 보내주세요!!</h1>
 
   <form action="/send" method="POST">
       Title  <br> <input type="text" name="title"><br>
