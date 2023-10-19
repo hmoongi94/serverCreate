@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./loginForm.css"/>
+  <link rel="stylesheet" href="./loginSuccess.css"> 
+  <style>
+    #root>form>input{
+      width:20vw;
+    }
+    #root>form>input:nth-child(2){
+      height:3vw;
+    }
+    #root>form>input:nth-child(5){
+      height: 30vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+
+    <h1>${parsedBody.username}님! 접속을 환영합니다. 저에게 편지를 보내주세요!</h1>
+    <form action="/send" method="POST">
+      Title <br> <input type="text" name="title" placeholder="제목을 입력하세요"><br>
+      Text  <br> <input type="text" name="text" placeholder="내용을 입력하세요"><br><br>
+      <input type="submit" value="send">
+    </form>
+
+  </div>
+</body>
+
+</html>

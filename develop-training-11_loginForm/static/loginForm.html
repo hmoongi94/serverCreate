@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./loginForm.css">
+</head>
+<body>
+  <div id="root">
+  <h1>Login Form</h1>
+  <!-- 양식이라는 이름의 form 태그는 전형적인 컨테이너 태그 중 하나이다. -->
+  <!-- 어떤 행동을 할지, 어떤 방법을 사용할지에 대한 것만 래핑한 사례이다. -->
+  <form action="/login" method="POST">
+    ID  <input type="text" name="username" placeholder="user name"><br>
+    Pw  <input type="password" name="password1" placeholder="password"><br>
+    Pw  <input type="password" name="password2" placeholder="password"><br>
+    Email  <input type="email" name="email" placeholder="email을 입력하시오"><br><br>
+    <input type="submit" value="login">
+    <!-- 제출(submit)을 진행했을 때 '요청(request)' 이벤트가 발생한다. -->
+  </form>
+  </div>
+  <script src="./loginForm.js"></script>
+
+</body>
+</html>
